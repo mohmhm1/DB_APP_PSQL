@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  
-  devise_for :users, :controllers => { :registrations => "registrations" 
-  
+  devise_for :users
   get 'sessions/new'
 
   get 'sessions/create'
