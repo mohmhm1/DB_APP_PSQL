@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Product: MyString
+  Category: MyString
+  Location: MyString
+  SerialNumber: MyString
+  LotNumber: MyString
+  ExpirationDate: 2016-02-26
+  Quantity: MyString
+  Notes: MyString
+
+two:
+  Product: MyString
+  Category: MyString
+  Location: MyString
+  SerialNumber: MyString
+  LotNumber: MyString
+  ExpirationDate: 2016-02-26
+  Quantity: MyString
+  Notes: MyString

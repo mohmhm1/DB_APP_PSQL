@@ -1,0 +1,31 @@
+ <div class="row">
+        <div class="col-md-3"><strong>Date of service:</strong>
+  <%= @service.date_of_service %></div>
+  		 <div class="col-md-3"><strong>Via:</strong>
+  <%= @service.Via %></div>
+  		 <div class="col-md-3"><strong>Person:</strong>
+  <%= @service.person %></div>
+        <div class="col-md-3"> <strong>Customer:</strong>
+  <%= @service.customer %></div>
+		<div class="col-md-3"> <strong>FAS:</strong>
+  <%= @service.FAS %></div>
+  		<div class="col-md-3"> <strong>FSE:</strong>
+  <%= @service.FSE %></div>
+  		<div class="col-md-3"> <strong>code:</strong>
+  <%= @service.code %></div>
+  		<div class="col-md-3"> <strong>instrument:</strong>
+  <%= @service.instrument %></div>
+        <div class="col-md-3"> <strong>Complaint:</strong>
+  <%= @service.complaint %></div>
+   		<div class="col-md-3"> <strong>Diagnosis:</strong>
+  <%= @service.Diagnosis %></div>
+   <div class="col-md-3"> <strong>Resolved:</strong>
+  <%= @service.resolved %></div>
+      </div>
+
+
+<p id="notice"><%= notice %></p>
+
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>

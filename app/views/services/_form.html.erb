@@ -1,0 +1,61 @@
+<%= form_for(@service) do |f| %>
+  <% if @service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% @service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date_of_service %><br>
+    <%= f.date_select :date_of_service %>
+  </div>
+   <div class="field">
+    <%= f.label :Via %><br>
+    <%= f.text_field :Via %>
+  </div>
+   <div class="field">
+    <%= f.label :person %><br>
+    <%= f.text_field :person%>
+  </div>
+  <div class="field">
+    <%= f.label :customer %><br>
+    <%= f.text_field :customer %>
+  </div>
+   <div class="field">
+    <%= f.label :FAS %><br>
+    <%= f.text_field :FAS %>
+  </div>
+  <div class="field">
+    <%= f.label :FSE %><br>
+    <%= f.text_field :FSE %>
+  </div>
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument%><br>
+    <%= f.text_field :instrument %>
+  </div>
+  <div class="field">
+    <%= f.label :complaint %><br>
+    <%= f.text_area :complaint %>
+  </div>
+  <div class="field">
+    <%= f.label :Diagnosis %><br>
+    <%= f.text_field :Diagnosis %>
+  </div>
+  <div class="field">
+   <%= f.label :resolved, "Check If the issue was resolved" %><br>
+    <%= f.check_box :resolved %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

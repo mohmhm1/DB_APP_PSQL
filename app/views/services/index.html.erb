@@ -1,0 +1,92 @@
+<p id="notice"><%= notice %></p>
+<div id="header">
+  <img src="/assets/logo-vela.png" align="right">
+</div>
+<h1>Listing Services</h1>
+
+ Download:
+  <%= link_to "Excel/CSV", services_export_path(format: "csv") %>
+ 
+<br>
+  <br>
+  <br>
+ <table>
+  <thead>
+    <tr> 
+<%= search_form_for @search do |f| %>
+  
+    <%= f.label :name_cont, "Search By Customer name" %>
+    <%= f.search_field :customer_cont %><br>
+    <%= f.label :date_of_service_gteq, "Date of service between" %>
+    <%= f.search_field :date_of_service_gteq  %>
+    <%= f.label :date_of_service_lteq, "and" %>
+    <%= f.search_field :date_of_service_lteq  %><br>
+     <%= f.label :name_cont, "Keywords in Complaint i.e 'PGM'" %>
+    <%= f.search_field :complaint_cont %>
+    <%= f.label :name_cont, "Keywords in Diagnosis i.e 'PGM'" %>
+    <%= f.search_field :Diagnosis_cont %>
+    <%= f.label :name_cont, "Search By Scientist" %>
+    <%= f.search_field :FAS_cont %>
+    <%= f.label :name_cont, "Search By Engineer" %>
+    <%= f.search_field :FSE_cont %>
+    <%= f.label :name_cont, "Search By Instrument" %>
+    <%= f.search_field :instrument %>
+ <br>
+  <br>
+  <div class="actions"><%= f.submit "Search" %></div>
+   <% end %>
+  </tr>
+  </thead>
+  <br>
+  <%= link_to 'Create a new Service record', new_service_path %>
+  <br>
+
+  <br>
+  <br>
+  <h4>Import Full Service Sheet</h4>
+  <%= form_tag import_services_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <%end%>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= sort_link @search, :date_of_service, "Service date" %></th>
+       <th><%= sort_link @search, :Via, "type of contact" %></th>
+       <th><%= sort_link @search, :person, "name of contact" %></th>
+      <th><%= sort_link @search, :customer, "Customer" %></th>
+      <th><%= sort_link @search, :FAS, "FAS" %></th>
+      <th><%= sort_link @search, :FSE, "FSE" %></th>
+      <th><%= sort_link @search, :code, "code" %></th>
+      <th><%= sort_link @search, :instrument, "Instrument" %></th>
+      <th><%= sort_link @search, :complaint, "Service complaint" %></th>
+      <th><%= sort_link @search, :Diagnosis, "Diagnosis" %></th>
+      <th><%= sort_link @search, :resolved, "Resolved" %></th>
+      <th><%= sort_link @search, :created_at, "created" %></th>
+      <th><%= sort_link @search, :updated_at, "last updated" %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @services.each do |service| %>
+    <tr>
+      <td><%= service.date_of_service %></td>
+      <td><%= service.Via %></td>
+      <td><%= service.person %></td>
+      <td><%= service.customer %></td>
+      <td><%= service.FAS %></td>
+      <td><%= service.FSE %></td>
+      <td><%= service.code %></td>
+      <td><%= service.instrument %></td>
+      <td><%= service.complaint %></td>
+      <td><%= service.Diagnosis %></td>
+      <td><%= service.resolved %></td>
+      <td><%= service.created_at %></td>
+      <td><%= service.updated_at %></td>
+      <td><%= link_to 'Show', service %></td>
+      <td><%= link_to 'Edit', edit_service_path(service) %></td>
+      <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= service.created_at %></td>
+    </tr>
+<tr>
+  <% end %>

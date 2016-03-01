@@ -1,0 +1,87 @@
+<p id="notice"><%= notice %></p>
+<div id="header">
+  <img src="/assets/logo-vela.png" align="right">
+</div>
+
+
+<h1>Listing Inventories</h1>
+
+<table>
+  <thead>
+    <tr>
+  <%= search_form_for @search do |f| %>
+
+    <%= f.label :name_cont, "Search By Product Name" %>
+    <%= f.search_field :Product_cont %><br>
+    <%= f.label :name_cont, "Search By Category" %>
+    <%= f.search_field :Category_cont %><br>
+    <%= f.label :name_cont, "Search By Location" %>
+    <%= f.search_field :Location_cont %><br>
+       <%= f.label :name_cont, "Search By Serial Number" %>
+    <%= f.search_field :SerialNumber_cont %><br>
+       <%= f.label :name_cont, "Search By Lot Number" %>
+    <%= f.search_field :LotNumber_cont %><br><th>Lotnumber</th>
+      <%= f.label :ExpirationDate_gteq, "Expiration Date between" %>
+    <%= f.search_field :ExpirationDate_gteq  %>
+    <%= f.label :ExpirationDate_lteq, "and" %>
+    <%= f.search_field :ExpirationDate_lteq  %><br>
+     <%= f.label :name_cont, "Search By Notes" %>
+    <%= f.search_field :Notes_cont %><br><th>Notes</th>
+  <br>
+  <br>
+  <div class="actions"><%= f.submit "Search" %></div>
+  <% end %>
+    </tr>
+  </thead>
+  <br>
+  <%= link_to 'Click to Add a new entry or import your CSV below', new_inventory_path %>
+  <br>
+
+  <br>
+  <br>
+  <h4>Import Full Inventory Sheet</h4>
+  <%= form_tag import_inventories_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+<table class="table table-bordered table-condensed">
+  <thead>
+  <tr>
+    <th><%= sort_link @search, :Product, "Product" %></th>
+       <th><%= sort_link @search, :Category, "Category" %></th>
+       <th><%= sort_link @search, :Location, "Location" %></th>
+      <th><%= sort_link @search, :SerialNumber, "Serial Number" %></th>
+      <th><%= sort_link @search, :LotNumber, "Lot Number" %></th>
+      <th><%= sort_link @search, :ExpirationDate, "Expiration Date" %></th>
+      <th><%= sort_link @search, :Quantity, "Quanity" %></th>
+      <th><%= sort_link @search, :Notes, "Notes" %></th>
+      <th><%= sort_link @search, :created_at, "created" %></th>
+      <th><%= sort_link @search, :updated_at, "last updated" %></th>
+    </tr>
+  </thead>
+
+
+ <tbody>
+    <% @inventoriez.each do |inventory| %>
+      <tr>
+        <td><%= inventory.Product %></td>
+        <td><%= inventory.Category %></td>
+        <td><%= inventory.Location %></td>
+        <td><%= inventory.SerialNumber %></td>
+        <td><%= inventory.LotNumber %></td>
+        <td><%= inventory.ExpirationDate %></td>
+        <td><%= inventory.Quantity %></td>
+        <td><%= inventory.Notes %></td>
+        <td><%= inventory.created_at %></td>
+        <td><%= inventory.updated_at %></td>
+        <td><%= link_to 'Show', inventory %></td>
+        <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+        <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

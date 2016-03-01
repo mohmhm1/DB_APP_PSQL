@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Sentosa&reg; SQ Reporter</title>
+
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="/static/css/bootstrap-panel.css" rel="stylesheet" type="text/css">
+<link href="/static/css/vdx-main.less" rel="stylesheet/less" type="text/css">
+<link href='/static/css/vdx-font.css' rel='stylesheet' type='text/css'>
+
+<script src="/static/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+<script type="text/javascript" src="/static/js/less.js"></script>
+
+<style>
+body {
+    background: image-url('/assets/bluedna.JPG') no-repeat 240px 0px;
+}
+
+#header {
+    padding: 1em;
+}
+
+#footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 1em;
+    text-align: center;
+}
+
+#mainholder {
+    width: 720px;
+    height: 240px;
+    position: absolute;
+    border: solid 2px black;
+    border-radius: 6px;
+    box-shadow: 5px 5px 5px #aaa;
+    background: url('/assets/greydna.JPG') no-repeat;
+}
+
+#formholder {
+    border-spacing: 5px !important;
+    border: solid 1px gray;
+    background: white;
+    border-radius: 6px;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#form {
+    width: 280px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#title {
+    font-family: 'Myriad Pro', sans-serif;
+    font-size: 64px;
+    color: black;
+    text-align: center;
+    font-weight: 200;
+    margin: 50px auto 30px;
+}
+
+#title .sentosa {
+    font-weight: 300;
+    font-style: italic;
+    margin: 40px auto;
+}
+
+#title .sq {
+    font-weight: 300;
+    color: #8ed300;
+}
+
+#version {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 30px;
+    color: grey;
+    text-align: center;
+    font-weight: 200;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
+ul.errorlist {
+    color: white;
+    list-style: none;
+    margin: 0;
+    margin-top: 1em;
+}
+ul.errorlist li {
+    color: red;
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    var mainholder = $('#mainholder'),
+        footer = $('#footer');
+    var fun = function () {
+        var winwidth = $(window).width();
+        var winheight = $(window).height(),
+            l = (winwidth - mainholder.width()) / 2,
+            t = (winheight - mainholder.height()) / 2;
+        mainholder.css({
+            left: l,
+            top: t,
+            'background-position': (240 - l - 1) + 'px ' + (-t) + 'px'
+        });
+        footer.css({
+            width: winwidth-30
+        })
+    };
+
+    fun();
+    $(window).resize(fun);
+});
+</script>
+</head>
+
+<body>
+
+<div id="header">
+  <img src="/assets/logo-vela.png" align="right">
+</div>
+
+<div id="mainholder">
+    <div id="title"><span class="sentosa">Vela</span>&reg; <span class="sq">Fairfield</span> Main Page</div>
+    <div id="version">Database v 1.0 </div>
+    <div>
+        <form id="formholder" class="well form-inline" method="post" action="/accounts/login/">
+            <input type='hidden' name='csrfmiddlewaretoken' value='IrMDLJyS4JF8AgD6Tn6oqQb5XP7MzXQJ' />
+            <div id="form">
+                 <%= link_to "Access", new_user_session_path %>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+<div id="footer">
+    <div>For technical support and user access please contact ahmed.mahmoud@veladx.com
+    </div>
+    <div>
+        
+        <em>Vela</em>&reg; is a registered trademark of Vela Holding Pte Ltd in several markets including the US and the European Union.
+    </div>
+</div>
+
+</body>
+</html>
+

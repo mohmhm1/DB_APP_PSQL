@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Date: 2016-02-24
+  Via: MyString
+  person: MyString
+  Organization: MyString
+  FAS: MyString
+  FSE: MyString
+  code: MyString
+  Instrument: MyString
+  Description: MyText
+  Diagnosis: MyText
+  resolved: false
+  closed: 2016-02-24
+
+two:
+  Date: 2016-02-24
+  Via: MyString
+  person: MyString
+  Organization: MyString
+  FAS: MyString
+  FSE: MyString
+  code: MyString
+  Instrument: MyString
+  Description: MyText
+  Diagnosis: MyText
+  resolved: false
+  closed: 2016-02-24

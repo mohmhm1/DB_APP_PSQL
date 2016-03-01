@@ -1,0 +1,65 @@
+<%= form_for(@vela) do |f| %>
+  <% if @vela.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vela.errors.count, "error") %> prohibited this vela from being saved:</h2>
+
+      <ul>
+      <% @vela.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Date %><br>
+    <%= f.date_select :Date %>
+  </div>
+  <div class="field">
+    <%= f.label :Via %><br>
+    <%= f.text_field :Via %>
+  </div>
+  <div class="field">
+    <%= f.label :person %><br>
+    <%= f.text_field :person %>
+  </div>
+  <div class="field">
+    <%= f.label :Organization %><br>
+    <%= f.text_field :Organization %>
+  </div>
+  <div class="field">
+    <%= f.label :FAS %><br>
+    <%= f.text_field :FAS %>
+  </div>
+  <div class="field">
+    <%= f.label :FSE %><br>
+    <%= f.text_field :FSE %>
+  </div>
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :Instrument %><br>
+    <%= f.text_field :Instrument %>
+  </div>
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_area :Description %>
+  </div>
+  <div class="field">
+    <%= f.label :Diagnosis %><br>
+    <%= f.text_area :Diagnosis %>
+  </div>
+  <div class="field">
+    <%= f.label :resolved %><br>
+    <%= f.check_box :resolved %>
+  </div>
+  <div class="field">
+    <%= f.label :closed %><br>
+    <%= f.date_select :closed %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

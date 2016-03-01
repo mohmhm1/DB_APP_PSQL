@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @inventory.Product %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @inventory.Category %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @inventory.Location %>
+</p>
+
+<p>
+  <strong>Serialnumber:</strong>
+  <%= @inventory.SerialNumber %>
+</p>
+
+<p>
+  <strong>Lotnumber:</strong>
+  <%= @inventory.LotNumber %>
+</p>
+
+<p>
+  <strong>Expirationdate:</strong>
+  <%= @inventory.ExpirationDate %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @inventory.Quantity %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @inventory.Notes %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>

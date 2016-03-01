@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  site: MyString
+  location: MyString
+  contacts: MyString
+  email: MyString
+  installed: 2016-02-25
+  FSE: MyString
+  PQandTraining: 2016-02-25
+  FAS: MyString
+  TrainedOn: MyString
+  SxSerialNumber: MyString
+  MappingTool: MyString
+  RGQSN: MyString
+  RgqSoftware: MyString
+  SAReporter: MyString
+  AssayPackage: MyString
+  NGS: false
+  NGSassay: MyString
+  NGSSXSN: MyString
+  ST401i: MyString
+  ST401e: MyString
+  SQ301: MyString
+  SQSuite: MyString
+  SQreporter: MyString
+  NGSInstall: 2016-02-25
+  NGSFSE: MyString
+  NGSPQandTraining: 2016-02-25
+  FAS: MyString
+
+two:
+  site: MyString
+  location: MyString
+  contacts: MyString
+  email: MyString
+  installed: 2016-02-25
+  FSE: MyString
+  PQandTraining: 2016-02-25
+  FAS: MyString
+  TrainedOn: MyString
+  SxSerialNumber: MyString
+  MappingTool: MyString
+  RGQSN: MyString
+  RgqSoftware: MyString
+  SAReporter: MyString
+  AssayPackage: MyString
+  NGS: false
+  NGSassay: MyString
+  NGSSXSN: MyString
+  ST401i: MyString
+  ST401e: MyString
+  SQ301: MyString
+  SQSuite: MyString
+  SQreporter: MyString
+  NGSInstall: 2016-02-25
+  NGSFSE: MyString
+  NGSPQandTraining: 2016-02-25
+  FAS: MyString

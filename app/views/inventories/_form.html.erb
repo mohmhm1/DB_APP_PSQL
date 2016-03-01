@@ -1,0 +1,49 @@
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+      <ul>
+      <% @inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Product %><br>
+    <%= f.text_field :Product %>
+  </div>
+  <div class="field">
+    <%= f.label :Category %><br>
+    <%= f.text_field :Category %>
+  </div>
+  <div class="field">
+    <%= f.label :Location %><br>
+    <%= f.text_field :Location %>
+  </div>
+  <div class="field">
+    <%= f.label :SerialNumber %><br>
+    <%= f.text_field :SerialNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :LotNumber %><br>
+    <%= f.text_field :LotNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :ExpirationDate %><br>
+    <%= f.date_select :ExpirationDate %>
+  </div>
+  <div class="field">
+    <%= f.label :Quantity %><br>
+    <%= f.text_field :Quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :Notes %><br>
+    <%= f.text_field :Notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
