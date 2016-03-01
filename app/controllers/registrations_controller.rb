@@ -10,6 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
   def update
   
+  super
 
   end
 
