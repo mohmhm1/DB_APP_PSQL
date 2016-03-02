@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-    scope "/admin" do
-    resources :users
-  end
+  devise_for :users, :controllers => { :registrations => "registrations" }
   get 'sessions/new'
 
   get 'sessions/create'
