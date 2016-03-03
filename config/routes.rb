@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  resources :post_attachments
+  resources :posts
+  get 'uploads/index'
+
+  get 'uploads/new'
+
+  get 'uploads/create'
+
+  get 'uploads/edit'
+
+  get 'uploads/destroy'
+ resources :uploads, only: [:index, :new, :create, :destroy, :edit]
   devise_for :users, :controllers => { :registrations => "registrations" }
   get 'sessions/new'
 

@@ -1,0 +1,29 @@
+<% if !@upload.errors.empty? %>
+   <div class = "alert alert-error">
+      
+      <ul>
+         <% @upload.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+      
+   </div>
+<% end %>
+
+<img src="/assets/logo-vela.png" align="right">
+</div>
+<h1>Upload a new file</h1>
+<br />
+<div class = "well">
+   <%= form_for @upload, html: { multipart: true } do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :topic %>
+      <%= f.text_field :topic %>
+	  <%= f.label :description %>
+      <%= f.text_area :description, :size=>"50", placeholder: "Type details here", :maxlength=>"254"%> 
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar, multiple: true %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+   <% end %>
+</div>

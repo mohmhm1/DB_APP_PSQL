@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229054516) do
+ActiveRecord::Schema.define(version: 20160303211914) do
 
   create_table "docs", force: :cascade do |t|
     t.string   "name"
@@ -58,9 +58,15 @@ ActiveRecord::Schema.define(version: 20160229054516) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "post_attachments", force: :cascade do |t|
+    t.integer  "post_id"
+    t.string   "attachment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
-    t.text     "posttext"
-    t.string   "postauthor"
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -113,6 +119,15 @@ ActiveRecord::Schema.define(version: 20160229054516) do
     t.date     "NGSPQandTraining"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "topic"
+    t.string   "attachment"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
