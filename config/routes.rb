@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :post_attachments
-  resources :posts
   get 'uploads/index'
 
   get 'uploads/new'
