@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+  get 'uploads/new'
+
+  get 'uploads/create'
+
+  get 'uploads/index'
+
+  get 'uploads/edit'
+
   resources :post_attachments
+  resources :uploads
   get 'uploads/index'
 
   get 'uploads/new'

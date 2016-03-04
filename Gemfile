@@ -34,8 +34,12 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-digitalocean'
 gem 'bcrypt', '~> 3.1.7'
-gem  'fog'
+gem  'fog-aws'
+gem 'fog'
 gem "mini_magick"
+gem 'rmagick'
+gem 'carrierwave_direct'
+gem 'aws-sdk', '< 2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

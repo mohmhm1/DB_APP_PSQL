@@ -1,203 +1,33 @@
-<% if !flash[:notice].blank? %>
-   <div class = "alert alert-info">
-      <%= flash[:notice] %>
-   </div>
-<% end %>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Vela&reg; </title>
-
-<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="/static/css/bootstrap-panel.css" rel="stylesheet" type="text/css">
-<link href="/static/css/vdx-main.less" rel="stylesheet/less" type="text/css">
-<link href='/static/css/vdx-font.css' rel='stylesheet' type='text/css'>
-
-<script src="/static/js/jquery.min.js"></script>
-
-<script type="text/javascript" src="/static/js/bootstrap.js"></script>
-<script type="text/javascript" src="/static/js/less.js"></script>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-<style>
-body {
-    background: url('/assets/bluedna.JPG') no-repeat 240px 0px;
-}
-
-#header {
-    padding: 1em;
-}
-
-#footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 1em;
-    text-align: center;
-}
-
-#mainholder {
-    width: 720px;
-    height: 240px;
-    position: absolute;
-    border: solid 2px black;
-    border-radius: 6px;
-    box-shadow: 5px 5px 5px #aaa;
-    background: url('/assets/greydna.JPG') no-repeat;
-}
-
-#formholder {
-    border-spacing: 5px !important;
-    border: solid 1px gray;
-    background: white;
-    border-radius: 6px;
-    width: 400px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-#form {
-    width: 280px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-#title {
-    font-family: 'Myriad Pro', sans-serif;
-    font-size: 64px;
-    color: black;
-    text-align: center;
-    font-weight: 200;
-    margin: 50px auto 30px;
-}
-
-#title .sentosa {
-    font-weight: 300;
-    font-style: italic;
-    margin: 40px auto;
-}
-
-#title .sq {
-    font-weight: 300;
-    color: #8ed300;
-}
-
-#version {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 30px;
-    color: grey;
-    text-align: center;
-    font-weight: 200;
-    margin-top: 0px;
-    margin-bottom: 25px;
-}
-
-ul.errorlist {
-    color: white;
-    list-style: none;
-    margin: 0;
-    margin-top: 1em;
-}
-ul.errorlist li {
-    color: red;
-}
-</style>
-
-<script type="text/javascript">
-$(document).ready(function () {
-    var mainholder = $('#mainholder'),
-        footer = $('#footer');
-    var fun = function () {
-        var winwidth = $(window).width();
-        var winheight = $(window).height(),
-            l = (winwidth - mainholder.width()) / 2,
-            t = (winheight - mainholder.height()) / 2;
-        mainholder.css({
-            left: l,
-            top: t,
-            'background-position': (240 - l - 1) + 'px ' + (-t) + 'px'
-        });
-        footer.css({
-            width: winwidth-30
-        })
-    };
-
-    fun();
-    $(window).resize(fun);
-});
-</script>
-</head>
-
-<body>
-
-<div id="header">
-  <img src="/assets/logo-vela.png" align="right">
+<h1>All uploads</h1>
+<img src="/assets/logo-vela.png" align="right">
 </div>
- <div class="container" align="center">
-<div> <%= yield %> </div>
- <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
-</div>
-</body>
-</html>
-
-<h1>Service file upload / download hub</h1>
-<br />
-<div class="pull-right">
-<%= link_to "New File Upload", new_upload_path, class: "btn btn-primary"  %>
-</div>
-<br />
-<br />
 <%= search_form_for @search do |f| %>
+  <%= f.label :name_cont, "Name of file" %>
+    <%= f.search_field :name_cont %><br>
   
-    <%= f.label :name_cont, "Search By name" %>
-    <%= f.search_field :name_cont %><br><br>
-     <%= f.label :description_cont, "Keywords in Description" %>
-    <%= f.search_field :description_cont %><th>
-    <%= f.label :topic_cont, "Search by topic" %>
-    <%= f.search_field :topic_cont %>
- <br>
-  <br>
+    <br>
   <div class="actions"><%= f.submit "Search" %></div>
    <% end %>
-<table class = "container" >
-<table class = "table table-bordered table-striped">
-   <thead>.
-      <tr>
-      <th><%= sort_link @search, :name, "Name" %></th>
-       <th><%= sort_link @search, :description, "Description" %></th>
-       <th><%= sort_link @search, :topic, "Topic" %></th>
-    	<th><%= sort_link @search, :attachment_url, "Attachment" %></th>
-    	<th><%= sort_link @search,  "" %></th>
-    	<th><%= sort_link @search, :created_at, "date created" %></th>
-         <th> </th>
-      </tr>
-   </thead>
-   
-   <tbody>
-      <% @uploadz.each do |upload| %>
-         
-         <tr>
-            <td><%= upload.name %></td>
-            <td><%= upload.description %></td>
-            <td><%= upload.topic %></td>
-            <td><%= image_tag(@upload.avatar)%></td>
-            <td><%= button_to "Delete",  upload, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{upload.name}?" %></td>
-            <td><%= upload.created_at %></td>
-         
-      <% end %>
-   </tbody>
-   
-</table>
+   <div class="pull-right">
+<%= link_to "New File Upload", new_upload_path, class: "btn btn-primary"  %>
+</div>
+<table class="table table-hover">
+  <thead>
+  <thead>
+    <tr>
+      <th><%= sort_link @search, :name, "File Name" %></th>
+      
+       <th><%= sort_link @search, :created_at, "Created" %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @uploadz.each do |upload| %>
+    <tr>
+      <td><%= link_to upload.name, upload.url %></td>
+      
+      <td><%= upload.created_at %></td>
+      
+    <tr>
+<% end %>
+
