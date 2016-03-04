@@ -193,7 +193,7 @@ $(document).ready(function () {
             <td><%= upload.name %></td>
             <td><%= upload.description %></td>
             <td><%= upload.topic %></td>
-            <td><%= link_to "Download upload", upload.avatars_url %></td>
+            <td><%= image_tag(@upload.avatar)%></td>
             <td><%= button_to "Delete",  upload, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{upload.name}?" %></td>
             <td><%= upload.created_at %></td>
          
