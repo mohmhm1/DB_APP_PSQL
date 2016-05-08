@@ -9,7 +9,13 @@ before_action :set_inventory, only: [:show, :edit, :update, :destroy]
     @search = Inventory.ransack(params[:q])
   @inventoriez= @search.result
   end
-
+def export
+    @data = Inventory.order(:created_at)
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.csv { send_data @data.to_csv }
+    end
+  end
   # GET /inventories/1
   # GET /inventories/1.json
   def show

@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   get 'docs/destroy'
 
   get 'inventories/index'
-  
+  get 'export', to: 'inventories#export', as: :inventories_export
   get 'inventories/import'
   get 'services/import'
   get 'export', to: 'services#export', as: :services_export

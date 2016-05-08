@@ -34,6 +34,10 @@
     </tr>
   </thead>
   <br>
+Download:
+  <%= link_to "Excel/CSV", inventories_export_path(format: "csv") %>
+  <br>
+  <br>
   <%= link_to 'Click to Add a new entry or import your CSV below', new_inventory_path %>
   <br>
 
@@ -54,7 +58,6 @@
       <th><%= sort_link @search, :LotNumber, "Lot Number" %></th>
       <th><%= sort_link @search, :ExpirationDate, "Expiration Date" %></th>
       <th><%= sort_link @search, :Quantity, "Quanity" %></th>
-      <th><%= sort_link @search, :Notes, "Notes" %></th>
       <th><%= sort_link @search, :created_at, "created" %></th>
       <th><%= sort_link @search, :updated_at, "last updated" %></th>
     </tr>
@@ -73,9 +76,9 @@
         <td><%= inventory.Quantity %></td>
         <td><%= inventory.created_at %></td>
         <td><%= inventory.updated_at %></td>
-        <td><%= link_to 'Show', inventory %></td>
+        <td><%= link_to 'View', inventory %></td>
         <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
-        <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
