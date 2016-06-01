@@ -73,7 +73,13 @@ Download:
         <td><%= inventory.SerialNumber %></td>
         <td><%= inventory.LotNumber %></td>
         <td><%= inventory.ExpirationDate %></td>
-        <td><%= inventory.Quantity %></td>
+        <% if inventory.Quantity <= inventory.Low_Stock_Indicator %>
+        <td><span style="background-color:yellow"> <%= inventory.Quantity %><td>
+        <% elsif inventory.Quantity == 0 %>
+        <td><span style="background-color:red"> <%= inventory.Quantity %><td>
+        <% else %>
+        <td><%= inventory.Quantity %><td>
+        <% end %>
         <td><%= inventory.created_at %></td>
         <td><%= inventory.updated_at %></td>
         <td><%= link_to 'View', inventory %></td>

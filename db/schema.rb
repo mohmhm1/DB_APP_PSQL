@@ -41,10 +41,11 @@ ActiveRecord::Schema.define(version: 20160304065225) do
     t.string   "SerialNumber"
     t.string   "LotNumber"
     t.date     "ExpirationDate"
-    t.string   "Quantity"
+    t.integer  "Quantity"
     t.text     "Notes"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "Low_Stock_Indicator"
   end
 
 # Could not dump table "newest" because of following NoMethodError
