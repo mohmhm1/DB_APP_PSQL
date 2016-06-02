@@ -3,7 +3,6 @@
   <img src="/assets/logo-vela.png" align="right">
 </div>
 
-
 <h1>Listing Inventories</h1>
 
 <table>
@@ -82,7 +81,7 @@ Download:
         <% end %>
         <td><%= inventory.created_at %></td>
         <td><%= inventory.updated_at %></td>
-        <td><%= link_to 'View', inventory %></td>
+        <td> <%= link_to 'View', inventory %>  </td>
         <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
         <td><%= link_to 'Delete', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
