@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag('default', :media => :screen) %>
+<%= stylesheet_link_tag('print', :media => :print) %>
 <p id="notice"><%= notice %></p>
 <div id="header">
   <img src="/assets/logo-vela.png" align="right">
@@ -9,45 +11,40 @@
   <thead>
     <tr>
   <%= search_form_for @search do |f| %>
-
-    <%= f.label :name_cont, "Search By Product Name" %>
-    <%= f.search_field :Product_cont %><br>
-    <%= f.label :name_cont, "Search By Category" %>
-    <%= f.search_field :Category_cont %><br>
-    <%= f.label :name_cont, "Search By Location" %>
-    <%= f.search_field :Location_cont %><br>
-       <%= f.label :name_cont, "Search By Serial Number" %>
-    <%= f.search_field :SerialNumber_cont %><br>
-       <%= f.label :name_cont, "Search By Lot Number" %>
-    <%= f.search_field :LotNumber_cont %><br><th>Lotnumber</th>
-      <%= f.label :ExpirationDate_gteq, "Expiration Date between" %>
+<table class="table table-default table-condensed">
+   <th> <%= f.label :name_cont, "Search By Product Name" %>
+    <%= f.search_field :Product_cont %> </th>
+    <th><%= f.label :name_cont, "Search By Category" %>
+    <%= f.search_field :Category_cont %></th>
+    <th><%= f.label :name_cont, "Search By Location" %>
+    <%= f.search_field :Location_cont %></th>
+    <th><%= f.label :name_cont, "Search By Serial Number" %>
+    <%= f.search_field :SerialNumber_cont %></th>
+    <th><%= f.label :name_cont, "Search By Lot Number" %>
+    <%= f.search_field :LotNumber_cont %></th>
+    <th><%= f.label :ExpirationDate_gteq, "Expiration Date between" %>
     <%= f.search_field :ExpirationDate_gteq  %>
     <%= f.label :ExpirationDate_lteq, "and" %>
-    <%= f.search_field :ExpirationDate_lteq  %><br>
-     <%= f.label :name_cont, "Search By Notes" %>
-    <%= f.search_field :Notes_cont %><br><th>Notes</th>
-  <br>
-  <br>
-  <div class="actions"><%= f.submit "Search" %></div>
-  <% end %>
-    </tr>
-  </thead>
-  <br>
-Download:
-  <%= link_to "Excel/CSV", inventories_export_path(format: "csv") %>
-  <br>
-  <br>
-  <%= link_to 'Click to Add a new entry or import your CSV below', new_inventory_path %>
-  <br>
+    <%= f.search_field :ExpirationDate_lteq  %></th>
+    <th><%= f.label :name_cont, "Search By Notes" %>
+    <%= f.search_field :Notes_cont %></th>
+  </table>
 
-  <br>
-  <br>
-  <h4>Import Full Inventory Sheet</h4>
-  <%= form_tag import_inventories_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
+  <th> <div class="actions"><%= f.submit "Search" %></div> </th>
+  </table>
   <% end %>
-<table class="table table-bordered table-condensed">
+  <table class="table table-default table-condensed">
+<th> Download:
+  <%= link_to "Excel/CSV", inventories_export_path(format: "csv") %></th>
+
+ <th> New:
+ <%= link_to 'Click to Add a new entry', new_inventory_path %></th>
+ <th> <%= form_tag import_inventories_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %></th>
+  <% end %>
+  </table>
+<table class="table table-hover table-condensed">
   <thead>
   <tr>
     <th><%= sort_link @search, :Product, "Product" %></th>
@@ -63,7 +60,7 @@ Download:
     </tr>
   </thead>
 
-
+<%= will_paginate @inventoriez %>
  <tbody>
     <% @inventoriez.each do |inventory| %>
       <tr>

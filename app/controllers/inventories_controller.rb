@@ -7,7 +7,7 @@ before_action :set_inventory, only: [:show, :edit, :update, :destroy]
   def index
     @inventories = Inventory.all
     @search = Inventory.ransack(params[:q])
-  @inventoriez= @search.result
+  @inventoriez= @search.result.paginate(:page => params[:page],:per_page => 5) 
   end
 def export
     @data = Inventory.order(:created_at)

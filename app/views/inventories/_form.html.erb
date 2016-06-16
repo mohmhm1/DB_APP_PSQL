@@ -18,7 +18,7 @@
   </div>
   <div class="field">
     <%= f.label :Category %><br>
-    <%= f.text_field :Category %>
+    <%= f.select :Category, ['Hardware [Commerical]', 'Labware [Commerical]', 'Consumables [Commerical]','Reagents[Commerical]', 'Hardware [Internal]', 'Labware [Internal]', 'Consumables [Internal]','Reagents[Internal]','Other'],include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :Location %><br>

@@ -26,7 +26,7 @@
 <body>
 
 <% if user_signed_in? %>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -104,6 +104,14 @@
 <br>
        
 <%= yield %>
-
+<style>
+body {height:100%;
+   width:100%;
+   background: url('/assets/greenskin.JPG');/*your background image*/  
+   background-repeat:repeat;/*we want to have one single image not a repeated one*/  
+   background-size:cover;/*this sets the image to fullscreen covering the whole screen*/  
+   /*css hack for ie*/     
+  
+}
 </body>
 </html>

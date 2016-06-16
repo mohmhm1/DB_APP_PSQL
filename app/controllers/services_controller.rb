@@ -1,12 +1,12 @@
 class ServicesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :create, :update, :import, :destroy]
   before_action :set_service, only: [:show, :edit, :update, :destroy]
-
+require 'will_paginate/array'
   # GET /services
   # GET /services.json
   def index
     @services = Service.all
-
+    
   end
 
   # GET /services/1
@@ -75,7 +75,7 @@ end
   end
  def index
   @search = Service.ransack(params[:q])
-  @services = @search.result
+  @services = @search.result.paginate(:page => params[:page],:per_page => 3) 
 end
 
   private

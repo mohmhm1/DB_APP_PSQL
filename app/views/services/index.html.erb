@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+
 <div id="header">
   <img src="/assets/logo-vela.png" align="right">
 </div>
@@ -41,6 +42,7 @@
   </thead>
   <br>
   <%= link_to 'Create a new Service record', new_service_path %>
+
   <br>
 
   <br>
@@ -51,6 +53,7 @@
     <%= submit_tag "Import CSV" %>
   <%end%>
 <table class="table table-hover">
+
   <thead>
     <tr>
       <th><%= sort_link @search, :date_of_service, "Service date" %></th>
@@ -70,6 +73,7 @@
   </thead>
 
   <tbody>
+  <%= will_paginate @services %>
   <% @services.each do |service| %>
     <tr>
       <td><%= service.date_of_service %></td>
