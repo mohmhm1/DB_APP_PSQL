@@ -1,0 +1,37 @@
+<div class="container">
+<div id="header">
+  <img src="/assets/logo-vela.png" align="right">
+    </div>
+    <%= link_to 'Back', inventories_path, class: "btn btn-primary"%>
+    <h1>History Of all Changes to Inventory</h1>
+  
+  
+    <% @versions.each do |version| %>
+      <li>
+      <b>User:</b>
+      <% if version.whodunnit && version.whodunnit != 'Guest' %>
+        <% user = User.find_by_id(version.whodunnit) %>
+        <% if user %>
+          <%= user.email %>
+          (last seen at <%= l(user.last_sign_in_at, format: "%-d.%m.%Y %H:%M:%S") %>)
+        <% end %>
+      <% else %>
+        Guest
+      <% end %>
+        <%= l(version.created_at, format: "%-d.%m.%Y %H:%M:%S %Z") %><br/>
+        Event ID: <%= version.id %><br/>
+        <b>Target:</b> <%= version.item_type %>
+        <small>(id: <%= version.item_id %>)</small>; <b>action</b> <%= version.event %>;<br/>
+        <div>
+          More info:
+          <pre><%= version.object %></pre>
+        </div>
+        <div>
+  Changeset:
+  <pre><%= version.changeset %></pre>
+</div>
+      </li>
+    <% end %>
+ 
+  </ul>
+</div>
