@@ -1,4 +1,5 @@
 class Inventory < ActiveRecord::Base
+has_paper_trail
 require 'csv'
 def self.to_csv(options = {})
   CSV.generate(options) do |csv|

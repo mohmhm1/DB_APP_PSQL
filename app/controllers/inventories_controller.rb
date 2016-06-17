@@ -3,7 +3,11 @@ before_action :authenticate_user!, only: [:index, :new, :create, :update, :impor
 before_action :set_inventory, only: [:show, :edit, :update, :destroy]
 	 # GET /inventories
   # GET /inventories.json
-  
+  def history
+    @versions = PaperTrail::Version.order('created_at ASC')
+    @search = PaperTrail::Version.ransack(params[:q])
+    @versions= @search.result.paginate(:page => params[:page],:per_page => 100) 
+  end
   def index
     @inventories = Inventory.all
     @search = Inventory.ransack(params[:q])
