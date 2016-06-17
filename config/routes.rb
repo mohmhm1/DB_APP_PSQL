@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   get 'services/import'
   get 'export', to: 'services#export', as: :services_export
 resources :docs, only: [:index, :new, :create, :destroy]
+get '/inventories/history', to: 'inventories#history', as: :inventories_history
   resources :inventories do 
     collection {post :import}
   end
@@ -102,8 +103,7 @@ get 'about' => 'about#index'
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
-  #     resources :comments
-  #     resources :sales do
+  #     #     resources :sales do
   #       get 'recent', on: :collection
   #     end
   #   end
