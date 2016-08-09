@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @inventory %> |
-<%= link_to 'Back', inventories_path %>
+<%= link_to 'Show', @inventory ,  data: { no_turbolink: true } %> |
+<%= link_to 'Back', inventories_path,  data: { no_turbolink: true } %>
