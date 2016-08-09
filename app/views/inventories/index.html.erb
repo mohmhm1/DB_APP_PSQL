@@ -1,14 +1,18 @@
+<!DOCTYPE html>
+<html>
+
 <%= stylesheet_link_tag('default', :media => :screen) %>
 <%= stylesheet_link_tag('print', :media => :print) %>
 <p id="notice"><%= notice %></p>
 <div id="header">
   <img src="/assets/logo-vela.png" align="right">
 </div>
+<body>
 
 <h1>Listing Inventories</h1>
 
 <table>
-  <thead>
+  <tbody>
     <tr>
   <%= search_form_for @search do |f| %>
 <table class="table table-default table-condensed">
@@ -33,6 +37,7 @@
   <th> <div class="actions"><%= f.submit "Search" %></div> </th>
   </table>
   <% end %>
+  </tbody>
   <table class="table table-default table-condensed">
 <th> Download:
   <%= link_to "Excel/CSV", inventories_export_path(format: "csv") %></th>
@@ -88,7 +93,7 @@
     <% end %>
   </tbody>
 </table>
-
+</body>
 
 
 
