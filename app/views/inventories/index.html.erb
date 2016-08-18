@@ -73,7 +73,7 @@
  <tbody>
     <% @inventoriez.each do |inventory| %>
       <tr>
-        <% if inventory.Quantity <= inventory.Low_Stock_Indicator and inventory.archivedstock == FALSE %>
+        <% if inventory.Quantity <= inventory.Low_Stock_Indicator or if inventory.Quantity == 0 and inventory.archivedstock == FALSE %>
         <td><span style="background-color:red"> <%= inventory.Product %></td>
         <td><span style="background-color:red"><%= inventory.Category %></td>
         <td><span style="background-color:red"><%= inventory.Location %></td>
