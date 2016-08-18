@@ -13,6 +13,15 @@ before_action :set_inventory, only: [:show, :edit, :update, :destroy]
     @search = Inventory.ransack(params[:q])
   @inventoriez= @search.result.paginate(:page => params[:page],:per_page => 15) 
   end
+
+ def index2
+    @inventories = Inventory.all
+    @search = Inventory.ransack(params[:q])
+  @inventoriez= @search.result.paginate(:page => params[:page],:per_page => 800) 
+  end
+
+
+
 def export
     @data = Inventory.order(:created_at)
     respond_to do |format|
