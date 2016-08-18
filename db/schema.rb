@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20160617194547) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.integer  "Low_Stock_Indicator"
+    t.boolean  "archivedstock"
   end
 
 # Could not dump table "newest" because of following NoMethodError

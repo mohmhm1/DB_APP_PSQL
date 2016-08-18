@@ -90,6 +90,6 @@ def export
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inventory_params
-      params.require(:inventory).permit(:Product, :Category, :Location, :SerialNumber, :LotNumber, :ExpirationDate, :Quantity, :Notes, :Low_Stock_Indicator)
+      params.require(:inventory).permit(:Product, :Category, :Location, :SerialNumber, :LotNumber, :ExpirationDate, :Quantity, :Notes, :Low_Stock_Indicator,:archivedstock)
     end
 end
