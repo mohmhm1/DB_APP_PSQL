@@ -41,8 +41,8 @@
     <%= f.text_field :Quantity %>
   </div>
   <div class="field">
-    <%= f.label :Low_Stock_Indicator %><br>
-    <%= f.text_field :Low_Stock_Indicator, :value => 0 %>
+    <span style="background-color:red"> <%= f.label :Low_Stock_Indicator, " Low Stock Indicator !!!! REQUIRED !!!!!!!!!" %><br>
+    <%= f.text_field :Low_Stock_Indicator %>
   </div>
   <div class="field">
    <%= f.label :archivedstock, "Is this an old record for a depleted inventory lot or serial number?" %><br>
