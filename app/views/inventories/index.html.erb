@@ -83,7 +83,7 @@
         <td><span style="background-color:red"> <%= inventory.Quantity %><td>
         <td><span style="background-color:red"><%= inventory.created_at %></td>
         <td><span style="background-color:red"><%= inventory.updated_at %></td>
-        <% elsif inventory.Quantity == 0 %>
+        <% elsif inventory.Quantity == 0 and inventory.archivedstock == TRUE %>
         <td><span style="background-color:grey"> <%= inventory.Product %></td>
         <td><span style="background-color:grey"><%= inventory.Category %></td>
         <td><span style="background-color:grey"><%= inventory.Location %></td>
@@ -104,6 +104,7 @@
         <td><%= inventory.created_at %></td>
         <td><%= inventory.updated_at %></td>
         <% end %>
+       
         <td> <%= link_to 'View', inventory %>  </td>
         <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
         <td><%= link_to 'Delete', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
