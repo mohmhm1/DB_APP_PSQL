@@ -1,5 +1,62 @@
 <h1>New Inventory</h1>
 
-<%= render 'form' %>
+<p> Please Use the back button below and not the tab at the top after making edits to the database <p>
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+      <ul>
+      <% @inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Product %><br>
+    <%= f.text_field :Product %>
+  </div>
+  <div class="field">
+    <%= f.label :Category %><br>
+    <%= f.select :Category, ['Hardware [Commerical]', 'Labware [Commerical]', 'Consumables [Commerical]','Reagents[Commerical]', 'Hardware [Internal]', 'Labware [Internal]', 'Consumables [Internal]','Reagents[Internal]','Other'],include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :Location %><br>
+    <%= f.text_field :Location %>
+  </div>
+  <div class="field">
+    <%= f.label :SerialNumber %><br>
+    <%= f.text_field :SerialNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :LotNumber %><br>
+    <%= f.text_field :LotNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :ExpirationDate %><br>
+    <%= f.date_select :ExpirationDate %>
+  </div>
+  <div class="field">
+    <%= f.label :Quantity %><br>
+    <%= f.text_field :Quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :Low_Stock_Indicator %><br>
+    <%= f.text_field :Low_Stock_Indicator, :value => 0 %>
+  </div>
+  <div class="field">
+   <%= f.label :archivedstock, "Is this an old record for a depleted inventory lot or serial number?" %><br>
+    <%= f.check_box :archivedstock %><br>
+  </div>
+  <div class="field">
+    <%= f.label :Notes %><br>
+    <%= f.text_area :Notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Back', inventories_path ,  data: { no_turbolink: true } %>
