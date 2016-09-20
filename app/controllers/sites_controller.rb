@@ -73,6 +73,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def site_params
-      params.require(:site).permit(:site, :location, :contacts, :email, :installed, :FSE, :PQandTraining, :FAS, :TrainedOn, :SxSerialNumber, :MappingTool, :RGQSN, :RgqSoftware, :SAReporter, :AssayPackage, :NGS, :NGSassay, :NGSSXSN, :ST401i, :ST401e, :SQ301, :SQSuite, :SQreporter, :NGSInstall, :NGSFSE, :NGSPQandTraining, :FAS)
+      params.require(:site).permit(:site, :location, :contacts, :email, :installed, :FSE, :PQandTraining, :FAS, :TrainedOn, :SxSerialNumber, :MappingTool, :RGQSN, :RgqSoftware, :SAReporter, :AssayPackage, :NGS, :NGSassay, :NGSSXSN, :ST401i, :ST401e, :SQ301, :SQSuite, :SQreporter, :NGSInstall, :NGSFSE, :NGSPQandTraining, :FAS, :Notes)
     end
 end

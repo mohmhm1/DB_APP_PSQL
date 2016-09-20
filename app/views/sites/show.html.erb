@@ -1,80 +1,91 @@
 <p id="notice"><%= notice %></p>
+<table border="0 " bgcolor="white" width="1000" height="400" >
+<td>
 
+    <strong>Site:</strong>
+    <h1><%= @site.site %>
+  </h1>
 <p>
-  <strong>Site:</strong>
-  <%= @site.site %>
+  <strong>Notes:</strong>
+  <%= @site.Notes %>
 </p>
+</td>
+</table>
 
-<p>
-  <strong>Location:</strong>
-  <%= @site.location %>
-</p>
+<table border="8" width="1000" height="50" bgcolor="black">
+<tr>
+<td>
+  <p>
+    <strong>Location:</strong>
+    <%= @site.location %>
+  </p>
 
-<p>
-  <strong>Contacts:</strong>
-  <%= @site.contacts %>
-</p>
+  <p>
+    <strong>Contacts:</strong>
+    <%= @site.contacts %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @site.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @site.email %>
+  </p>
 
-<p>
-  <strong>Installed:</strong>
-  <%= @site.installed %>
-</p>
+  <p>
+    <strong>Installed:</strong>
+    <%= @site.installed %>
+  </p>
 
-<p>
-  <strong>Fse:</strong>
-  <%= @site.FSE %>
-</p>
+  <p>
+    <strong>Fse:</strong>
+    <%= @site.FSE %>
+  </p>
 
-<p>
-  <strong>Pqandtraining:</strong>
-  <%= @site.PQandTraining %>
-</p>
+  <p>
+    <strong>Pqandtraining:</strong>
+    <%= @site.PQandTraining %>
+  </p>
 
-<p>
-  <strong>Fas:</strong>
-  <%= @site.FAS %>
-</p>
+  <p>
+    <strong>Fas:</strong>
+    <%= @site.FAS %>
+  </p>
 
-<p>
-  <strong>Trainedon:</strong>
-  <%= @site.TrainedOn %>
-</p>
+  <p>
+    <strong>Trainedon:</strong>
+    <%= @site.TrainedOn %>
+  </p>
 
-<p>
-  <strong>Sxserialnumber:</strong>
-  <%= @site.SxSerialNumber %>
-</p>
+  <p>
+    <strong>Sxserialnumber:</strong>
+    <%= @site.SxSerialNumber %>
+  </p>
 
-<p>
-  <strong>Mappingtool:</strong>
-  <%= @site.MappingTool %>
-</p>
+  <p>
+    <strong>Mappingtool:</strong>
+    <%= @site.MappingTool %>
+  </p>
 
-<p>
-  <strong>Rgqsn:</strong>
-  <%= @site.RGQSN %>
-</p>
+  <p>
+    <strong>Rgqsn:</strong>
+    <%= @site.RGQSN %>
+  </p>
 
-<p>
-  <strong>Rgqsoftware:</strong>
-  <%= @site.RgqSoftware %>
-</p>
+  <p>
+    <strong>Rgqsoftware:</strong>
+    <%= @site.RgqSoftware %>
+  </p>
 
-<p>
-  <strong>Sareporter:</strong>
-  <%= @site.SAReporter %>
-</p>
+  <p>
+    <strong>Sareporter:</strong>
+    <%= @site.SAReporter %>
+  </p>
 
-<p>
-  <strong>Assaypackage:</strong>
-  <%= @site.AssayPackage %>
-</p>
-
+  <p>
+    <strong>Assaypackage:</strong>
+    <%= @site.AssayPackage %>
+  </p>
+</td>
+<td>
 <p>
   <strong>Ngs:</strong>
   <%= @site.NGS %>
@@ -130,10 +141,13 @@
   <%= @site.NGSPQandTraining %>
 </p>
 
-<p>
   <strong>Fas:</strong>
   <%= @site.FAS %>
+
 </p>
+</td>
+</tr>
+</table>
 
 <%= link_to 'Edit', edit_site_path(@site) %> |
 <%= link_to 'Back', sites_path %>

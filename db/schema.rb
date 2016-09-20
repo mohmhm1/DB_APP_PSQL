@@ -138,6 +138,7 @@ ActiveRecord::Schema.define(version: 20160617194547) do
     t.date     "NGSPQandTraining"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "Notes"
   end
 
   create_table "uploads", force: :cascade do |t|
