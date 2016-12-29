@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Sentosa&reg; SQ Reporter</title>
 
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="/static/css/bootstrap-panel.css" rel="stylesheet" type="text/css">
+<link href="/static/css/vdx-main.less" rel="stylesheet/less" type="text/css">
+<link href='/static/css/vdx-font.css' rel='stylesheet' type='text/css'>
+
+<script src="/static/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+<script type="text/javascript" src="/static/js/less.js"></script>
+
+<style>
+
+#title .sq {
+    font-weight: 500;
+    color: #8ed300;
+}
+</style>
+</head>
+<body>
 <%= stylesheet_link_tag('default', :media => :screen) %>
 <%= stylesheet_link_tag('print', :media => :print) %>
 <p id="notice"><%= notice %></p>
@@ -9,7 +32,7 @@
 </div>
 <body>
 
-<h1>Listing Inventories</h1>
+<div id="title"><h1><span class="sq">Vela Fairfield Inventory Portal</span></h1> </div>
 
 <table>
   <tbody>

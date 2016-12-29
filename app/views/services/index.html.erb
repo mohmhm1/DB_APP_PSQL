@@ -1,9 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Sentosa&reg; SQ Reporter</title>
+
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="/static/css/bootstrap-panel.css" rel="stylesheet" type="text/css">
+<link href="/static/css/vdx-main.less" rel="stylesheet/less" type="text/css">
+<link href='/static/css/vdx-font.css' rel='stylesheet' type='text/css'>
+
+<script src="/static/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+<script type="text/javascript" src="/static/js/less.js"></script>
+
+<style>
+
+#title .sq {
+    font-weight: 500;
+    color: #8ed300;
+}
+</style>
+</head>
+<body>
 <p id="notice"><%= notice %></p>
 
 <div id="header">
   <img src="/assets/logo-vela.png" align="right">
 </div>
-<h1>Listing Services</h1>
+<div id="title"><h1><span class="sq">Service Portal</span></h1> </div>
 
  Download:
   <%= link_to "Excel/CSV", services_export_path(format: "csv") %>
@@ -91,4 +117,6 @@
       <td><%= service.created_at %></td>
     </tr>
 <tr>
+
   <% end %>
+  </body>

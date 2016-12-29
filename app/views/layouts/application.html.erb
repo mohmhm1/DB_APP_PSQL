@@ -55,8 +55,8 @@
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-           <div>Signed in as... <%= current_user.email %></div>
-           <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+           <div> Welcome, <%= current_user.email %></div>
+           <%= link_to "Log off /", destroy_user_session_path, method: :delete %>
            <%= link_to "Change your password", edit_user_registration_path %>
             
           </div><!--/.nav-collapse -->
