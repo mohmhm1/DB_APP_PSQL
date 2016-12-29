@@ -64,8 +64,6 @@
       <th><%= sort_link @search, :FSE, "FSE" %></th>
       <th><%= sort_link @search, :code, "code" %></th>
       <th><%= sort_link @search, :instrument, "Instrument" %></th>
-      <th><%= sort_link @search, :complaint, "Service complaint" %></th>
-      <th><%= sort_link @search, :Diagnosis, "Diagnosis" %></th>
       <th><%= sort_link @search, :resolved, "Resolved" %></th>
       <th><%= sort_link @search, :created_at, "created" %></th>
       <th><%= sort_link @search, :updated_at, "last updated" %></th>
@@ -84,12 +82,10 @@
       <td><%= service.FSE %></td>
       <td><%= service.code %></td>
       <td><%= service.instrument %></td>
-      <td><%= service.complaint %></td>
-      <td><%= service.Diagnosis %></td>
       <td><%= service.resolved %></td>
       <td><%= service.created_at %></td>
       <td><%= service.updated_at %></td>
-      <td><%= link_to 'View', service %></td>
+      <td><%= link_to 'View', service, :onclick=> "window.open(this.href,'create_company', 'height=600, width=600');return false;"%>
       <td><%= link_to 'Edit', edit_service_path(service) %></td>
       <td><%= link_to 'Delete', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <td><%= service.created_at %></td>

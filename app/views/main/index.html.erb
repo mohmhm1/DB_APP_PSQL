@@ -17,7 +17,7 @@
 
 <style>
 body {
-    background: url('/assets/bluedna.JPG') no-repeat 240px 0px;
+    background: url('/assets/bluedna.JPG') no-repeat ;
 }
 
 #header {
@@ -39,7 +39,7 @@ body {
     border: solid 2px black;
     border-radius: 6px;
     box-shadow: 5px 5px 5px #aaa;
-    background: url('/assets/greydna.JPG') repeat;
+  
 }
 
 #formholder {
@@ -111,7 +111,7 @@ $(document).ready(function () {
         mainholder.css({
             left: l,
             top: t,
-            'background-position': (240 - l - 1) + 'px ' + (-t) + 'px'
+            'background-position': (200 - l - 1) + 'px ' + (-t) + 'px'
         });
         footer.css({
             width: winwidth-30
@@ -124,15 +124,18 @@ $(document).ready(function () {
 </script>
 </head>
 
+    
 <body>
-
+<th>
+</th>
 <div id="header">
-  <img src="/assets/logo-vela.png" align="right">
+  <img src="/assets/logo-vela.png" align="center">
 </div>
 
-<div id="mainholder">
+<div id="mainholder" style="left: 616.5px; top: 498px; background-position: -377.5px -498px;">
+
     <div id="title"><span class="sentosa">Vela</span>&reg; <span class="sq">Fairfield</span> Main Page</div>
-    <div id="version">Database v 1.1 </div>
+    <div id="version">Database v 2.0 </div>
     <div>
         <form id="formholder" class="well form-inline" method="post" action="/accounts/login/">
             <input type='hidden' name='csrfmiddlewaretoken' value='IrMDLJyS4JF8AgD6Tn6oqQb5XP7MzXQJ' />

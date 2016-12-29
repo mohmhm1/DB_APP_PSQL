@@ -75,7 +75,7 @@ end
   end
  def index
   @search = Service.ransack(params[:q])
-  @services = @search.result.paginate(:page => params[:page],:per_page => 3) 
+  @services = @search.result.paginate(:page => params[:page],:per_page => 20) 
 end
 
   private

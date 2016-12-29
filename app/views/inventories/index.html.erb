@@ -106,7 +106,8 @@
         <td><%= inventory.updated_at %></td>
         <% end %>
        
-        <td> <%= link_to 'View', inventory %>  </td>
+        
+        <td><%= link_to 'View', inventory, :onclick=> "window.open(this.href,'create_company', 'height=600, width=600');return false;"%>
         <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
         <td><%= link_to 'Delete', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
