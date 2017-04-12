@@ -1,27 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample app for inventory management, complaint filing, file upload an retrieval via AWS integration tied to a POSTGRESQL instance.
 
-Things you may want to cover:
+ROR 4.0
 
-* Ruby version
+Run bundle install command
 
-* System dependencies
+start server using rails s
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+navigate to localhost:3000 on browser
 
 
 Please feel free to use a different markup language if you do not plan to run
